@@ -1,0 +1,181 @@
+import React,{useState} from 'react';
+import { StyleSheet, Text, View, TextInput, Image, Button, Pressable} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+function Inicio({navigation}){
+  
+  return(
+    <View style = {styles.container}>
+      <Text style={styles.titulo}>Informações</Text>
+      <Text style={styles.titulo1}>Básicas</Text>
+      <Text style={styles.nomeinf}>Salomão fonseca Pantoja junior</Text>
+      <Text style={styles.nomeinf1}>Desenvolvedor Web</Text>
+      <Text style={styles.nomeinf2}>idade: 18 anos</Text>
+      <Text style={styles.Email}>email: juniorsalomao75@gmail.com</Text>
+      <Text style={styles.email1}>Linkedin:</Text>
+      <Text style={styles.email2}>Facebook</Text>
+
+          <Image 
+            style={styles.img1}
+            source={require('../install/assets/eu.jpeg')}/>
+        <Button 
+            style={styles.botao1}
+            title = "Ir para as minhas Informações"
+            onPress={() => navigation.push('Inicio')}>
+        </Button>
+
+      {/*<Pressable 
+            style={styles.botao2}
+            title = "Experiências profissionais"
+            onPress={() => navigation.push('Prof')}
+      ></Pressable>
+
+      <Pressable
+            style={styles.botao3}
+            title = "Como eu trabalho"
+            onPress={() => navigation.push('Trab')}
+  ></Pressable>*/}
+    </View>
+  );
+}
+
+{/*function Prof({navigation}){
+  return(
+          <View style = {styles.container}>
+            <Text style={styles.titulo}>Experiências</Text>
+              <Image 
+                  style={styles.img1}
+                  source={require('../install/assets/capa.png')}/>
+                  <Button 
+                      title = "Volte ao Início"
+                      onPress={() => navigation.popToTop()}>
+                  </Button>
+          </View>
+  );
+}*/}
+
+{/*function Info({navigation}){
+  return(
+          <View style = {styles.container}>
+            <Text style={styles.titulo}>Informações</Text>
+              <Image 
+                  style={styles.img1}
+                  source={require('../install/assets/capa.png')}/>
+                  <Button 
+                      title = "Volte ao Início"
+                      onPress={() => navigation.popToTop()}
+                  ></Button>
+          </View>
+  );
+}*/}
+
+{/*function Trab({navigation}){
+  return(
+          <View style = {styles.container}>
+            <Text style={styles.titulo}>Outros</Text>
+              <Image 
+                  style={styles.img1}
+                  source={require('../install/assets/splash.png')}/>
+                  <Button 
+                      title = "Volte ao Início"
+                      onPress={() => navigation.popToTop()}
+                  ></Button>
+          </View>
+  );
+}*/}
+
+const Stack = createNativeStackNavigator();
+
+export default function App(props) {
+  
+  return (
+            <NavigationContainer>
+              <Stack.Navigator>
+                  <Stack.Screen name='Mini curriculo de Salomão' component={Inicio}></Stack.Screen>
+                   {/* <Stack.Screen name='Experiências profissionais' component={Prof}></Stack.Screen>
+                      <Stack.Screen name='Ir para as minhas Informações' component={Info}></Stack.Screen>
+                       <Stack.Screen name='Como eu trabalho' component={Trab}></Stack.Screen>*/}
+                  </Stack.Navigator>
+            </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#564334',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  titulo: {
+    top:130,
+    fontSize:15,
+    color:'black',
+    alignItems:'center',
+    backgroundColor:'#98e9d0',borderRadius:5,
+  },
+  titulo1:{
+    top:140,
+    fontSize:15,
+    color:'black',
+    alignItems:'center',
+    backgroundColor:'#98e9d0',borderRadius:5,
+  },
+  botao1:{
+    backgroundColor:'black',
+  },
+  botao2:{
+    backgroundColor:'white',
+  },
+  botao3:{
+    backgroundColor:'white',
+  },
+  img1:{
+    width:160,
+    height:200,
+    top:-240,
+  },
+  nomeinf:{
+    top:170,
+    fontSize:15,
+    color:'black',
+    alignItems:'center',
+    backgroundColor:'#98e9d0',borderRadius:5,
+  },
+  nomeinf1:{
+    top:180,
+    fontSize:15,
+    color:'black',
+    alignItems:'center',
+    backgroundColor:'#98e9d0',borderRadius:5,marginRight:80,
+  },
+  nomeinf2:{
+    top:190,
+    fontSize:15,
+    color:'black',
+    alignItems:'center',
+    backgroundColor:'#98e9d0',borderRadius:5,marginRight:115,
+  },
+  Email:{
+    top:200,
+    fontSize:15,
+    color:'black',
+    alignItems:'center',
+    backgroundColor:'#98e9d0',borderRadius:5,marginRight:-30,
+  },
+  email1:{
+    top:210,
+    fontSize:15,
+    color:'black',
+    alignItems:'center',
+    backgroundColor:'#98e9d0',borderRadius:5,marginRight:120,
+  },
+  email2:{
+    top:190,
+    fontSize:15,
+    color:'black',
+    alignItems:'center',
+    backgroundColor:'#98e9d0',borderRadius:5,marginRight:-150,
+  },
+});

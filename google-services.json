@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "644429288699",
+    "project_id": "novoprojeto-7e5a5",
+    "storage_bucket": "novoprojeto-7e5a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644429288699:android:9c7ec83626a769d2f4cc5e",
+        "android_client_info": {
+          "package_name": "com.salomao13133131.Mini_Curriculos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644429288699-plact4t57fq7m11bi39c8lckukvqnl4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4c_TvWfGntqgmsht4jnWWwHdYbjE4wu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644429288699-plact4t57fq7m11bi39c8lckukvqnl4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

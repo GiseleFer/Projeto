@@ -1,0 +1,68 @@
+import { ScrollView } from 'react-native-gesture-handler';
+import React from "react";
+import { Text,View,TextInput } from "react-native";
+import {Feather} from '@expo/vector-icons';
+
+import novo from './novo';
+export default function New(){
+    return(
+        <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{backgroundColor:'#fff',}}
+        >
+        <View style={styles.header}>
+            <View style={styles.inpputArea}>
+                <Feather
+                name="search" size={24} color='black'/>
+            <TextInput
+            placeholder="Oque voce quer?"
+            style={styles.input}/>
+            </View>
+        </View>
+
+        <View style={styles.contentNew}>
+            <Text style={styles.title}>Novidades</Text>
+        </View>
+
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingHorizontal:15,}}>
+            
+        </ScrollView>
+        </ScrollView>
+    );
+}
+
+const styles = StyleSheet.create({
+    header:{
+        paddingHorizontal:15,
+        FlexDirection:'row',
+        AlignItems:'center',
+        width:'100%',
+        marginVertical:20,
+    },
+    inpputArea:{
+        paddingHorizontal:15,
+        FlexDirection:'row',
+        AlignItems:'center',
+        width:'98%',
+        backgroundColor:'#fff',
+        height:17,
+        borderradius:10,
+    },
+    input:{
+        fontFamily:'Montserrat_500Medium',
+        paddingHorizontal:10,
+        fonySize:13,
+        width:'90%',
+    },
+    contentNew:{
+        FlexDirection:'row',
+        width:'100%',
+        AlignItems:'center',
+    },
+    title:{
+        paddingHorizontal:15,
+        fontFamily:'Montserrat_700Bold',
+        fontSize:18,
+        color:'a4f44a',
+    }
+});

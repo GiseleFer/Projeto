@@ -1,0 +1,10 @@
+import { Linking, ToastAndroid } from 'react-native'
+
+const openUrl = async(url) => {
+  if(await Linking.canOpenURL(url)) {
+    await Linking.openURL(url)
+  }
+  else {
+    ToastAndroid.show('Can\'t open this URL', ToastAndroid.SHORT)
+  }
+}

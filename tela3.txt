@@ -1,0 +1,109 @@
+import {Staturbar} from 'expo-status-bar';
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+
+
+const [nome, setNome] = useState('');
+const [email, setEmail] = useState('');
+const [senha, setSenha] = useState('');
+
+return(
+    <View style{styles.container}>
+    <Staturbar hidden/>
+    <Image style={{widht:300,height:200}} source={require('./Image)}/>
+    <TextInput placeholder="seu nome..." style={styles.TextInput} onChangeText={text=setNome(text)}/>
+    <TextInput placeholder="seu email..." style={styles.TextInput} onChangeText={text=setEmail(text)}/>
+    <TextInput placeholder="sua senha..." style={styles.TextInput} onChangeText={text=setSenha(text)}/>
+    {/*secureTextEntry={true} placeholder...*/}
+)
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,]
+        backgroundColor:'',
+        alignItems:'center',
+        justifyContent:'center',
+        padding:20,
+
+    },
+    TextInput:{
+        widht:'100%',
+        height:40,
+        backgroundColor:'white',
+        borderRadius:20,
+        paddinglef:10,
+        margimBottom:10,
+    }
+})
+
+
+//atualizado
+import {Staturbar} from 'expo-status-bar';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View, Image, TextInput, TouchableOpacity} from 'react-native';
+
+
+export default function App(){
+
+const [nome, setNome] = useState('');
+const [email, setEmail] = useState('');
+const [senha, setSenha] = useState('');
+
+
+const cadastro = () =>{
+    alert('funcionando');
+}
+
+/*
+fuction cadastro = () =>{
+  alert('funcionando');
+}
+*/
+
+
+return(
+
+  //image
+    <View style={styles.container}>
+    <Staturbar hidden/>
+    <Image style={{widht:300,height:200}} source={require('./assets/capa.png')}/>
+    
+    
+    {/**Informções centrais */}
+    <TextInput placeholder="seu nome..." style={styles.textInput} onChangeText={nome=setNome(text)}/>
+    <TextInput placeholder="seu email..." style={styles.textInput} onChangeText={email=setEmail(text)}/>
+    <TextInput securetextEntry={true} placeholder="sua senha..." style={styles.textInput} onChangeText={senha=setSenha(text)}/>
+
+
+{/**cadastro */}
+    <TouchableOpacity  style={styles.btnCad} onPress={()=>cadastro()}>
+      <Text style={{color:'white',textAlign:'center'}}>Enviar</Text>
+    </TouchableOpacity>
+  </View>
+);
+}
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:'white',
+        alignItems:'center',
+        justifyContent:'center',
+        padding:20,
+
+    },
+    textInput:{
+        widht:'100%',
+        height:40,
+        backgroundColor:'white',
+        borderRadius:20,
+        paddinglef:10,
+        margimBottom:10,
+    },
+    btnCad:{
+      widht:100,
+      backgroundColor:'white',
+      borderRadius:5,
+     justifyContent:'center',
+    }
+});

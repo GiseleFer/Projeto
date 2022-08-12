@@ -1,0 +1,107 @@
+//atualizado
+import React, {useState} from 'react';
+import { Button, StyleSheet, Text, View, Image, TextInput,ImageBackground, TouchableOpacity, StatusBar, Pressable} from 'react-native';
+
+
+const image = { uri: "https://i.pinimg.com/736x/90/0b/55/900b55526c28a8f9de4d992cfdee2452.jpg" };
+const Segundatela = ({navigation}) => {
+
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+
+  const cadastro = () =>{
+      alert('Suas Informações foram enviadas com Sucesso!');
+  }
+
+  /*
+  fuction cadastro = () =>{
+    alert('funcionando');
+  }
+  */
+
+  return(
+    //image
+      <View style={styles.container}>
+         <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+      <StatusBar hidden/>
+
+      <Image style={{width:200,height:200,top:-80,marginLeft:85}} source={require('../../assets/perso.png')}/>
+      
+      
+      {/**Informções centrais */}
+     
+      <TextInput placeholder="seu nome..." style={styles.textinput} onChangeText={text=>setNome(text)}/>
+      <Text></Text>
+      <TextInput placeholder="seu email..." style={styles.textinput} onChangeText={text=>setEmail(text)}/>
+      <Text></Text>
+      <TextInput placeholder="porque quer me contratar..." style={styles.textinput} onChangeText={text=>setSenha(text)}/>
+      {/**securetextEntry={true}*/} 
+    
+
+
+  {/**cadastro */}
+      <TouchableOpacity  style={styles.btncad} onPress={()=>cadastro()}>
+        <Text style={{color:'white',textAlign:'center'}}>Enviar</Text>
+      </TouchableOpacity>
+      {/**ir para */}
+     {/**  <Pressable style={styles.btseg} onPress={() => navigation.navigate("Projetos")}>
+            <Text>Ver meus Projetos</Text>
+  </Pressable>*/}
+
+      {/**voltar tela */}
+              <Pressable style={styles.btseg1}onPress={() => navigation.goBack("Telainicial")}>
+                <Text style={{color:'white',marginLeft:25,fontSize:20,top:1}}>Inicio</Text>
+                </Pressable>
+             </ImageBackground>
+    </View>
+  );
+}
+
+
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+    },
+    image: {
+      flex: 1,
+      justifyContent: "center"
+    },
+    textinput:{
+        height:40,
+        backgroundColor:'whitesmoke',
+        borderRadius:20,
+        top:-40,
+        marginEnd:-1,
+        width:300,
+        padding:10,
+        marginLeft:27
+    },
+
+    //botao enviar
+    btncad:{
+      backgroundColor:'black',
+      borderRadius:5,
+      height:30,
+      width:60,
+     justifyContent:'center',
+     top:-1,
+     marginLeft:140
+    },
+
+    //botao ir para o carrosel
+   // btseg:{
+      //marginEnd:150,
+      //top:38,backgroundColor:'whitesmoke',borderRadius:5,
+  // },
+
+    //botao voltar a tela inicial
+    btseg1:{
+      top:50,backgroundColor:'black',borderRadius:5,marginLeft:120, height:30,
+      width:100,
+    }
+});
+
+export default Segundatela;

@@ -1,0 +1,97 @@
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { StyleSheet, Text, TextInput, View, Button, Pressable, Alert, Image } from 'react-native';
+
+
+const texto = () => {
+    const name = ("Salomão");
+    const idade =("18");
+    const texto =("Oi sou o Salomão e que em posso ajuda-lo?");
+
+    function validar() {
+      if (name != null && idade != null && texto !=null)
+    
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.form}>
+        <Image
+        style={styles.logocapa}
+        source={require('../install/assets/capa.png')}/>
+
+        <Text style={styles.info}>Insira suas</Text>
+      <Text style={styles.info2}>Informações</Text>
+{/**nome */}
+      <TextInput
+      style={styles.input}
+      onChangeText={name}
+      value={name}
+      placeholder="Seu nome"
+      keyboardType="default">
+      </TextInput>
+ {/**idade */}
+      <TextInput
+            style={styles.input}
+            onChangeText={idade}
+            value={idade}
+            placeholder="Sua idade"
+            keyboardType="defaut">
+      </TextInput>
+      {/**texto */}
+      <TextInput
+            style={styles.input}
+            onChangeText={texto}
+            value={texto}
+            placeholder="Sua idade"
+            keyboardType="default">
+      </TextInput>
+
+      <Text style={styles.botao}> Seja Bem vindo ao meu site</Text>
+      <StatusBar style="auto" />
+
+      <Text style={styles.textname}> Nome</Text>
+      <StatusBar style="auto"/>
+    </View>
+    </View>
+  );
+}
+}
+
+  
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '482344#',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  
+
+  botao:{
+    border:20,
+    borderRadius:5, 
+    backgroundColor:'#ffffff',
+  },
+
+  form: {
+    backgroundColor: "white",
+    padding: 25,
+    borderRadius: 15,
+    alignItems: 'center',
+  },
+
+  logocapa: {
+    width:230,
+    height:200,
+  },
+
+  input: {
+    width: 175,
+    marginTop: 10,
+    marginBottom: 15,
+    padding: 8,
+    backgroundColor: "#F5F5F5",
+    borderRadius: 7,
+  },
+});

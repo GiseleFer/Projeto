@@ -1,0 +1,115 @@
+import { StatusBar } from 'expo-status-bar';
+import React,{useState} from 'react';
+import { StyleSheet, Text, View, TextInput, Image,Button} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+function Inicio({navigation}){
+  return(
+    <View style = {styles.container}>
+      <Text style={styles.titulo}>Início</Text>
+      <Image 
+        style={styles.img}
+        source={{uri:'https://www.imagenspng.com.br/wp-content/uploads/2022/04/flork-png-45.png'}}/>
+      <Button 
+        style={styles.botao}
+        title = "Vá para Detalhes"
+        onPress={() => navigation.push('Detalhes')}
+      ></Button>
+      <Button 
+        style={styles.botao}
+        title = "Vá para Cálculos"
+        onPress={() => navigation.push('Cálculos')}
+      ></Button>
+      <Button 
+        style={styles.botao}
+        title = "Vá para Conta"
+        onPress={() => navigation.push('Conta')}
+      ></Button>
+    </View>
+  );
+}
+
+function Detalhes({navigation}){
+  return(
+    <View style = {styles.container}>
+      <Text style={styles.titulo}>Detalhes</Text>
+      <Image 
+        style={styles.img}
+        source={{uri:'https://www.imagenspng.com.br/wp-content/uploads/2022/04/flork-png-19.png'}}/>
+      <Button 
+        title = "Volte ao Início"
+        onPress={() => navigation.popToTop()}
+      ></Button>
+    </View>
+  );
+}
+
+function Calculos({navigation}){
+  return(
+    <View style = {styles.container}>
+      <Text style={styles.titulo}>Cálculos</Text>
+      <Image 
+        style={styles.img}
+        source={{uri:'https://www.imagenspng.com.br/wp-content/uploads/2022/04/flork-png-43.png'}}/>
+      <Button 
+        title = "Volte ao Início"
+        onPress={() => navigation.popToTop()}
+      ></Button>
+    </View>
+  );
+}
+
+function Conta({navigation}){
+  return(
+    <View style = {styles.container}>
+      <Text style={styles.titulo}>Conta</Text>
+      <Image 
+        style={styles.img}
+        source={{uri:'https://www.imagenspng.com.br/wp-content/uploads/2022/04/flork-png-05.png'}}/>
+      <Button 
+        title = "Volte ao Início"
+        onPress={() => navigation.popToTop()}
+      ></Button>
+    </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+export default function App(props) {
+  
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Inicio' component={Inicio} ></Stack.Screen>
+        <Stack.Screen name='Cálculos' component={Calculos}></Stack.Screen>
+        <Stack.Screen name='Detalhes' component={Detalhes}></Stack.Screen>
+        <Stack.Screen name='Conta' component={Conta}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#44f',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  titulo: {
+    fontSize:30,
+    color:'white'
+  },
+  botao: {
+    margin:20,
+    top: 20,
+  },
+  img:{
+    width:250,
+    height:250,
+    
+    alignItems:'center',
+  }
+});
